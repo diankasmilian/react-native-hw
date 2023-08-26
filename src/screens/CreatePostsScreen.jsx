@@ -12,9 +12,12 @@ import {
   TouchableWithoutFeedback,
   Keyboard,
   ImageBackground,
+  ScrollView,
 } from 'react-native';
 import { MaterialIcons } from '@expo/vector-icons';
 import { Ionicons } from '@expo/vector-icons';
+import { AntDesign } from '@expo/vector-icons';
+import { Input } from 'react-native-elements';
 
 export const CreatePostsScreen = () => {
   const [fontLoader, setfontLoader] = useState(false);
@@ -40,38 +43,70 @@ export const CreatePostsScreen = () => {
 
   return (
     <KeyboardAvoidingView
-      style={styles.container}
+      style={{ flex: 1 }}
       behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
-      keyboardVerticalOffset={Platform.OS === 'ios' ? -180 : -140}
+      keyboardVerticalOffset={Platform.OS === 'ios' ? -150 : -140}
     >
-      <View style={styles.photoLoaderBox}>
-        {userImage ? (
-          <Image source={{ uri: userImage }} style={styles.photo} />
-        ) : (
-          <View style={styles.templateBox}></View>
-        )}
-        <TouchableOpacity
-          style={[
-            styles.photoButton,
-            userImage
-              ? { backgroundColor: 'rgba(255, 255, 255, 0.3)' }
-              : { backgroundColor: '#fff' },
-          ]}
-        >
-          <MaterialIcons
-            name="photo-camera"
-            size={24}
-            color={userImage ? '#FFFFFF' : '#BDBDBD'}
-          />
-        </TouchableOpacity>
+      <View style={styles.container}>
+        <View style={styles.photoLoaderBox}>
+          {userImage ? (
+            <Image source={{ uri: userImage }} style={styles.photo} />
+          ) : (
+            <View style={styles.templateBox}></View>
+          )}
+          <TouchableOpacity
+            style={[
+              styles.photoButton,
+              userImage
+                ? { backgroundColor: 'rgba(255, 255, 255, 0.3)' }
+                : { backgroundColor: '#fff' },
+            ]}
+          >
+            <MaterialIcons
+              name="photo-camera"
+              size={24}
+              color={userImage ? '#FFFFFF' : '#BDBDBD'}
+            />
+          </TouchableOpacity>
 
-        <Text style={styles.photoText}>
-          {userImage ? 'Редагувати фото' : 'Завантажте фото'}
-        </Text>
-      </View>
-      <View style={styles.inputBox}>
-        <TextInput placeholder="Назва..." />
-        <TextInput />
+          <Text style={styles.photoText}>
+            {userImage ? 'Редагувати фото' : 'Завантажте фото'}
+          </Text>
+        </View>
+        <View style={styles.formBox}>
+          <View style={styles.inputBox}>
+            <Input
+              placeholder="Назва..."
+              inputStyle={styles.inputIcon}
+              placeholderStyle={styles.placeholderStyle}
+              placeholderTextColor="#BDBDBD"
+              inputContainerStyle={styles.inputContainer}
+            />
+            <Input
+              placeholder="Місцевість..."
+              placeholderStyle={styles.placeholderStyle}
+              placeholderTextColor="#BDBDBD"
+              inputContainerStyle={styles.inputContainer}
+              leftIcon={
+                <Ionicons
+                  name="md-location-outline"
+                  size={20}
+                  color="#BDBDBD"
+                  type="font-awesome"
+                />
+              }
+              inputStyle={styles.inputIcon}
+            />
+          </View>
+          <TouchableOpacity style={styles.formButton}>
+            <Text style={styles.buttonText}>Опубліковати</Text>
+          </TouchableOpacity>
+        </View>
+        <View style={styles.buttonDeleteBox}>
+          <TouchableOpacity style={styles.buttonDelete}>
+            <AntDesign name="delete" size={24} color="#BDBDBD" />
+          </TouchableOpacity>
+        </View>
       </View>
     </KeyboardAvoidingView>
   );
@@ -83,6 +118,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     paddingLeft: 16,
     paddingRight: 16,
+    paddingBottom: 34,
     justifyContent: 'space-between',
   },
   photoLoaderBox: {
@@ -114,7 +150,48 @@ const styles = StyleSheet.create({
     borderRadius: 8,
     backgroundColor: '#F6F6F6',
   },
+  formBox: {},
   inputBox: {
     marginTop: 32,
+    marginBottom: 32,
+  },
+  placeholderStyle: {
+    fontFamily: 'RobotoRegular',
+    fontSize: 16,
+    color: '#BDBDBD',
+  },
+  inputIcon: {
+    paddingTop: 16,
+    paddingBottom: 15,
+    fontFamily: 'RobotoRegular',
+    fontSize: 16,
+    color: '#212121',
+  },
+  inputContainer: {
+    borderBottomColor: '#E8E8E8',
+  },
+  formButton: {
+    paddingTop: 16,
+    paddingBottom: 16,
+    backgroundColor: '#F6F6F6',
+    borderRadius: 100,
+    alignItems: 'center',
+  },
+  buttonText: {
+    fontFamily: 'RobotoRegular',
+    fontSize: 16,
+    color: '#BDBDBD',
+  },
+  buttonDeleteBox: {
+    alignItems: 'center',
+    // marginBottom: 34,
+  },
+  buttonDelete: {
+    paddingTop: 8,
+    paddingBottom: 8,
+    paddingLeft: 23,
+    paddingRight: 23,
+    backgroundColor: '#F6F6F6',
+    borderRadius: 20,
   },
 });
