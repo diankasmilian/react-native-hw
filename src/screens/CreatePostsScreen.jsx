@@ -118,7 +118,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     paddingLeft: 16,
     paddingRight: 16,
-    paddingBottom: 34,
+    paddingBottom: 10,
     justifyContent: 'space-between',
   },
   photoLoaderBox: {
@@ -126,7 +126,7 @@ const styles = StyleSheet.create({
     gap: 8,
   },
   photo: {
-    width: 343,
+    width: '100%',
     height: 240,
     borderRadius: 8,
   },
@@ -184,7 +184,6 @@ const styles = StyleSheet.create({
   },
   buttonDeleteBox: {
     alignItems: 'center',
-    // marginBottom: 34,
   },
   buttonDelete: {
     paddingTop: 8,
