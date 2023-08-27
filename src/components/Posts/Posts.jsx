@@ -42,11 +42,7 @@ const DATA = [
 export const Posts = ({ onPress }) => {
   const Item = ({ title, uri, location, comments, like }) => (
     <View style={styles.contentBox}>
-      <Image
-        source={{ uri: uri }}
-        style={styles.photoContent}
-        resizeMode="contain"
-      />
+      <Image source={{ uri: uri }} style={styles.photoContent} />
       <Text style={styles.nameContent}>{title}</Text>
       <View style={styles.deteilsContent}>
         <View style={styles.statistic}>
@@ -89,10 +85,12 @@ const styles = StyleSheet.create({
   contentBox: {
     marginBottom: 32,
     gap: 8,
+    justifyContent: 'center',
+    width: '100%',
   },
   photoContent: {
     borderRadius: 10,
-    width: 343,
+    width: '100%',
     height: 240,
   },
   nameContent: {
