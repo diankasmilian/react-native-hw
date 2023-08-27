@@ -1,13 +1,13 @@
-import { PostsScreen } from './PostsScreen';
+import { PostsScreen } from '../screens/PostsScreen';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { AntDesign } from '@expo/vector-icons';
 import { Ionicons } from '@expo/vector-icons';
-import { CreatePostsScreen } from './CreatePostsScreen';
-import { ProfileScreen } from './ProfileScreen';
+import { CreatePostsScreen } from '../screens/CreatePostsScreen';
+import { ProfileScreen } from '../screens/ProfileScreen';
 import { CreateIcon } from '../components/CreateIcon/CreateIcon';
 import { TouchableOpacity } from 'react-native';
 
-export const Home = ({ navigation }) => {
+export const BottomNavigator = ({ navigation }) => {
   const Tabs = createBottomTabNavigator();
 
   const onReturnLoginPage = () => {

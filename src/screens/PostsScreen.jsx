@@ -3,6 +3,7 @@ import * as Font from 'expo-font';
 import { StyleSheet, View, Text, TouchableOpacity, Image } from 'react-native';
 import { Fontisto } from '@expo/vector-icons';
 import { Ionicons } from '@expo/vector-icons';
+import { Posts } from '../components/Posts/Posts';
 
 export const PostsScreen = ({ navigation }) => {
   const [fontLoader, setfontLoader] = useState(false);
@@ -39,25 +40,7 @@ export const PostsScreen = ({ navigation }) => {
           <Text style={styles.userEmail}>email@example.com</Text>
         </View>
       </View>
-      <View style={styles.contentBox}>
-        <Image
-          source={require('../assets/content.jpg')}
-          style={styles.photoContent}
-        />
-        <Text style={styles.nameContent}>Ліс</Text>
-        <View style={styles.deteilsContent}>
-          <TouchableOpacity style={styles.comment} onPress={onCommentsPage}>
-            <Fontisto name="comment" size={20} color="#BDBDBD" />
-            <Text style={styles.commentText}>0</Text>
-          </TouchableOpacity>
-          <TouchableOpacity style={styles.location}>
-            <Ionicons name="md-location-outline" size={20} color="#BDBDBD" />
-            <Text style={styles.locationText}>
-              Ivano-Frankivs'k Region, Ukraine
-            </Text>
-          </TouchableOpacity>
-        </View>
-      </View>
+      <Posts onPress={onCommentsPage} />
     </View>
   );
 };
@@ -71,6 +54,7 @@ const styles = StyleSheet.create({
   },
   userBox: {
     marginTop: 32,
+    marginBottom: 33,
     display: 'flex',
     flexDirection: 'row',
     alignItems: 'center',
