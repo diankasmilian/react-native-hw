@@ -13,7 +13,7 @@ import {
   Keyboard,
   ImageBackground,
 } from 'react-native';
-import { Buttons } from '../components/Buttons/Buttons';
+import { Buttons } from '../components/Buttons';
 import { AntDesign } from '@expo/vector-icons';
 
 export const RegistrationScreen = ({ navigation }) => {

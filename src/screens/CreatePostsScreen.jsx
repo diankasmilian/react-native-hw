@@ -9,10 +9,6 @@ import {
   KeyboardAvoidingView,
   Platform,
   Image,
-  TouchableWithoutFeedback,
-  Keyboard,
-  ImageBackground,
-  ScrollView,
 } from 'react-native';
 import { MaterialIcons } from '@expo/vector-icons';
 import { Ionicons } from '@expo/vector-icons';
@@ -22,8 +18,8 @@ import { Input } from 'react-native-elements';
 export const CreatePostsScreen = () => {
   const [fontLoader, setfontLoader] = useState(false);
   const [userImage, setUserImage] = useState(
-    'https://s3-alpha-sig.figma.com/img/d7eb/2439/565ee2bb708d7a3f27c90a7cd3c9f0fa?Expires=1693785600&Signature=IlkCKuaxq7h~mnmOc5t5Gwa0IBGHROPr7lrGpNEcW69RhwnsbkQy~8unBXWDd9MLHy4KRoepbtGho2-yiaxvOFElVWsgyX-SQ8VfKxHV7iQgfWodAApIERximW--clVuDO4iGBZx8dXoAoQq~fU3oyTGF2wO477QY-mVCoJQVr201MgavrI8BbGmZ~rlqfL2mQfJtHNIY~8Ewh-mppWM~eWp-Q9BPPsi1TRFGAFKGswyO3B~7~Fe0HzOb7g8OYKhJRjUYQ~~phj7b3LsPD~0tSZYIZJ9PXSaAi38pOEcSHf0ZdgN4ylnsuSbHEnmLxDwdr4CtrnqQ4ivsHbYDsQyRg__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4'
-    //  null
+    // 'https://s3-alpha-sig.figma.com/img/d7eb/2439/565ee2bb708d7a3f27c90a7cd3c9f0fa?Expires=1693785600&Signature=IlkCKuaxq7h~mnmOc5t5Gwa0IBGHROPr7lrGpNEcW69RhwnsbkQy~8unBXWDd9MLHy4KRoepbtGho2-yiaxvOFElVWsgyX-SQ8VfKxHV7iQgfWodAApIERximW--clVuDO4iGBZx8dXoAoQq~fU3oyTGF2wO477QY-mVCoJQVr201MgavrI8BbGmZ~rlqfL2mQfJtHNIY~8Ewh-mppWM~eWp-Q9BPPsi1TRFGAFKGswyO3B~7~Fe0HzOb7g8OYKhJRjUYQ~~phj7b3LsPD~0tSZYIZJ9PXSaAi38pOEcSHf0ZdgN4ylnsuSbHEnmLxDwdr4CtrnqQ4ivsHbYDsQyRg__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4'
+    null
   );
 
   useEffect(() => {
@@ -145,7 +141,7 @@ const styles = StyleSheet.create({
     color: '#BDBDBD',
   },
   templateBox: {
-    width: 343,
+    width: '100%',
     height: 240,
     borderRadius: 8,
     backgroundColor: '#F6F6F6',
@@ -153,7 +149,7 @@ const styles = StyleSheet.create({
   formBox: {},
   inputBox: {
     marginTop: 32,
-    marginBottom: 32,
+    marginBottom: 5,
   },
   placeholderStyle: {
     fontFamily: 'RobotoRegular',

@@ -10,7 +10,7 @@ import {
   TouchableWithoutFeedback,
   Keyboard,
 } from 'react-native';
-import { Buttons } from '../components/Buttons/Buttons';
+import { Buttons } from '../components/Buttons';
 import React, { useEffect, useState } from 'react';
 
 export const LoginScreen = ({ navigation }) => {

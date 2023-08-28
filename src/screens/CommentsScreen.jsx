@@ -113,7 +113,6 @@ const styles = StyleSheet.create({
   },
   inputBox: {
     justifyContent: 'flex-end',
-    marginBottom: 16,
   },
   input: {
     paddingTop: 16,

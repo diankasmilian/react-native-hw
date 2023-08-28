@@ -76,6 +76,7 @@ export const Posts = ({ onPress }) => {
         />
       )}
       keyExtractor={(item) => item.id}
+      showsVerticalScrollIndicator={false}
     />
   );
 };

@@ -1,9 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import * as Font from 'expo-font';
-import { StyleSheet, View, Text, TouchableOpacity, Image } from 'react-native';
-import { Fontisto } from '@expo/vector-icons';
-import { Ionicons } from '@expo/vector-icons';
-import { Posts } from '../components/Posts/Posts';
+import { StyleSheet, View, Text, Image } from 'react-native';
+import { Posts } from '../components/Posts';
 
 export const PostsScreen = ({ navigation }) => {
   const [fontLoader, setfontLoader] = useState(false);

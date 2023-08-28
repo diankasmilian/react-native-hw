@@ -32,6 +32,7 @@ export const MainNavigator = () => {
           component={CommentsScreen}
           options={({ navigation }) => ({
             headerTitle: 'Коментарі',
+            headerTitleAlign: 'center',
             headerLeft: () => (
               <AntDesign
                 name="arrowleft"

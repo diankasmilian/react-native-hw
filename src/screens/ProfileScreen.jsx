@@ -7,13 +7,10 @@ import {
   TouchableOpacity,
   Image,
   ImageBackground,
-  FlatList,
-  SafeAreaView,
 } from 'react-native';
 import { AntDesign } from '@expo/vector-icons';
 import { Ionicons } from '@expo/vector-icons';
-import { Fontisto } from '@expo/vector-icons';
-import { Posts } from '../components/Posts/Posts';
+import { Posts } from '../components/Posts';
 
 export const ProfileScreen = ({ navigation }) => {
   const [fontLoader, setfontLoader] = useState(false);

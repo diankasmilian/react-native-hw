@@ -4,7 +4,7 @@ import { AntDesign } from '@expo/vector-icons';
 import { Ionicons } from '@expo/vector-icons';
 import { CreatePostsScreen } from '../screens/CreatePostsScreen';
 import { ProfileScreen } from '../screens/ProfileScreen';
-import { CreateIcon } from '../components/CreateIcon/CreateIcon';
+import { CreateIcon } from '../components/CreateIcon';
 import { TouchableOpacity } from 'react-native';
 
 export const BottomNavigator = ({ navigation }) => {
@@ -52,6 +52,7 @@ export const BottomNavigator = ({ navigation }) => {
         component={PostsScreen}
         options={{
           headerTitle: 'Публікації',
+          headerTitleAlign: 'center',
           headerRight: () => (
             <TouchableOpacity
               onPress={onReturnLoginPage}
@@ -67,6 +68,7 @@ export const BottomNavigator = ({ navigation }) => {
         component={CreatePostsScreen}
         options={({ navigation }) => ({
           headerTitle: 'Створити публікацію',
+          headerTitleAlign: 'center',
           tabBarStyle: { display: 'none' },
           headerLeft: () => (
             <AntDesign
